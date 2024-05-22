@@ -1,0 +1,42 @@
+//to do: reverse the multimap
+function reversed()
+descr: modifies the multimap to reverse its keys and values
+pre: m is an multimap
+post: m' = m reversed
+Complexity: theta(n*m) n= nr keys , m = nr values
+
+PSEDOCOD:
+
+subalgorithm reversed() is:
+
+  prev: int[cap]
+  i <- head
+  prev[head] <- -1
+  while next[i] != -1 execute:
+     prev[next[i]] <- i
+     i <- next[i]
+
+  end-while
+  i<- head
+  while i != -1 execute:
+       reversed.elems[i] <- reverseValues(i)
+       i <- next[i]
+  end-while
+
+  next <- prev
+
+
+end-subalgorithm
+
+//complexity theta(n) n = nr of vales from key i
+ subalgorithm reverseValues(i) is:
+    prev: int[cap]
+    while elems[i].second.next[j] != -1 execute:
+        prev[elems[i].second.next[j]] <- j
+        j <- elems[i].second.next[j]
+    end-while
+
+    elems[i].second.head <-j
+    elems[i].second.next <- prev
+
+end-subalgorithm

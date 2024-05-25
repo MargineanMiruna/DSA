@@ -1,0 +1,15 @@
+Matrix = {m | m ist eine schwachbesetzte Matrix mit Elementen von Typ TElem}
+position(m, elem)
+    pre: m eine Matrix von Typ Matrix, und elem, ein Element von Typ TElem
+    post: ein Paar von zwei Integer, i und j, die die Positionen des Elementes aus der Matrix darstellen
+    descr: findet die Positionen aus der Matrix auf denen sich das Element befindet
+
+Pseudocode:
+subalgorithm position(elem) is:
+    for i <- 0, m do
+        if elems[i].value = elem then
+            return pair(elems[i].i, elems[i].j)
+        end-if
+    end-for
+    return pair(-1, -1)
+end-subalgorithm

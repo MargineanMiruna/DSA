@@ -17,5 +17,6 @@ public:
 	void next();
 	TElem getCurrent();
 	bool valid() const;
+    void modifyCurrent(TComp value);
 };
 
